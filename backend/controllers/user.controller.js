@@ -14,7 +14,7 @@ export const getAllUsers = async (req, res, next) => {
     if (!users) {
         return res.status(404).json({ message: "No Users Found" })
     }
-    console.log("All Users : \n",users)
+    console.log("All Users : \n", users)
     return res.status(200).json({ users })
 }
 
@@ -66,8 +66,8 @@ export const login = async (req, res, next) => {
         console.log(`User ${existingUser.name} logged in.`)
         return res.status(200).json({ message: `User ${existingUser.name} logged in.` })
 
-    } 
-    
+    }
+
     catch (error) {
         console.log(error)
         return res.status(500).json({ message: error })

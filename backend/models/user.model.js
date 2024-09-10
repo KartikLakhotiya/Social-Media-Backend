@@ -3,28 +3,28 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    name:{
+    name: {
         type: String,
         required: true
     },
-    email:{
+    email: {
         type: String,
         required: true,
         unique: true
     },
-    password:{
+    password: {
         type: String,
         required: true,
         minlength: 6
     },
-    blogs:[
+    blogs: [
         {
-            type: mongoose.Types.ObjectId,
-            ref:"Blog",
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Blog",
             required: true
         }
     ]
 });
 
-const User = mongoose.model("User",userSchema);
+const User = mongoose.model("User", userSchema);
 export default User;

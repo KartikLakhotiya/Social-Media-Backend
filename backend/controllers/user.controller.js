@@ -18,8 +18,6 @@ export const getAllUsers = async (req, res, next) => {
     return res.status(200).json({ users })
 }
 
-
-
 export const signUp = async (req, res, next) => {
     const { name, email, password } = req.body;
     let existingUser;

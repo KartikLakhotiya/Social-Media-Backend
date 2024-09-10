@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./db/MongoDB.js";
 import router from "./routes/user.routes.js";
 import cors from 'cors';
+import blogRouter from "./routes/blog.routes.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }))
 
 //routes
 app.use("/api/user",router);
+app.use("/api/blog",blogRouter); 
 
 
 app.get('/', (req, res) => {

@@ -19,7 +19,7 @@ app.use("/api/user",router);
 
 
 app.get('/', (req, res) => {
-    res.send("Server is Ready.")
+    res.send("Social Media Backend Server is Ready.")
 })
 
 app.listen(PORT, () => {

@@ -14,6 +14,7 @@ export const getAllUsers = async (req, res, next) => {
     if (!users) {
         return res.status(404).json({ message: "No Users Found" })
     }
+    console.log("All Users : \n",users)
     return res.status(200).json({ users })
 }
 
@@ -38,6 +39,7 @@ export const signUp = async (req, res, next) => {
         })
 
         await user.save();
+        console.log(`User ${user.name} Created`)
         return res.status(201).json({ user })
     }
     catch (error) {
